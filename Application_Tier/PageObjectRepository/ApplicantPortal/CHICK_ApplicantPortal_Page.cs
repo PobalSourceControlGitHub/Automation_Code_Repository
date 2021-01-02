@@ -88,7 +88,8 @@ namespace Automation_Suite.Application_Tier.PageObjectRepository.ApplicantPortal
 
         [FindsBy(How = How.XPath, Using = "//*[@id='AutoAddressControl']/div/input")]
         public IWebElement addressSection { get; set; }
-
+	
+	//TODO
 
         [FindsBy(How = How.Id, Using = ".autoaddress-text-box")]
         public IWebElement autoaddress_text { get; set; }
