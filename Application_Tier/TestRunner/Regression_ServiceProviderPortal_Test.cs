@@ -24,7 +24,7 @@ namespace Automation_Suite.Application_Tier.TestRunner
 
         }
 
-        }
+    }
 
 
 

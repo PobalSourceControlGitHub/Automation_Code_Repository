@@ -47,7 +47,7 @@ namespace Automation_Suite.Application_Tier.PageObjectRepository.ServiceProvider
         public IWebElement Eyp_lastname { get; set; }
 
 
-        [FindsBy(How = How.ClassName, Using = "input-append input-group datetimepicker")]
+        [FindsBy(How = How.XPath, Using = "//table/tbody/tr[3]/td[1]/div[2]/div/input")]
         public IWebElement DateOfBirth { get; set; }
         
         [FindsBy(How = How.Id, Using = "eyp_chic")]
@@ -80,9 +80,7 @@ namespace Automation_Suite.Application_Tier.PageObjectRepository.ServiceProvider
 
         [FindsBy(How = How.PartialLinkText, Using = "Service Provider")]
         public IWebElement ServiceProvider { get; set; }
-
-        [FindsBy(How = How.PartialLinkText, Using = "Service Calendar")]
-        public IWebElement ServiceCalendar { get; set; }
+        
 
         [FindsBy(How = How.PartialLinkText, Using = "Create Calendar")]
         public IWebElement CreateCalendar { get; set; }
@@ -93,7 +91,14 @@ namespace Automation_Suite.Application_Tier.PageObjectRepository.ServiceProvider
         [FindsBy(How = How.Id, Using = "eyp_monopeningtime")]
         public IWebElement Monopeningtime { get; set; }
 
+        [FindsBy(How = How.Id, Using = "//input[@type='text'])[8]")]
+        public IWebElement StartDate { get; set; }
 
+        [FindsBy(How = How.Id, Using = "//input[@type='text'])[10]")]
+        public IWebElement EndDate { get; set; }
+
+
+       
         public RegistartionTab(IWebDriver webDriver)
         {
             this.driver = webDriver;
@@ -132,14 +137,28 @@ namespace Automation_Suite.Application_Tier.PageObjectRepository.ServiceProvider
             NCS_Tab.Click();
 
             RetrieveCHICK.Click();
-            Eyp_firstname.SendKeys("Test");
-            Eyp_firstname.SendKeys("Automation");
 
-            DateOfBirth.SendKeys("");
-            Eyp_chic.SendKeys("");
+            Excel_Suite childDataExcel = new Excel_Suite(Env.EXCEL_TEST_CHILD_DATA);
+            ChildAward_Data ChildData = childDataExcel.GetChildDetails(Env.EXCEL_TEST_CHILD_DATA);
+            
+
+            Eyp_firstname.SendKeys(ChildData.ChildFirstName);
+            Eyp_lastname.SendKeys(ChildData.ChildLastName);
+
+            DateOfBirth.SendKeys(ChildData.DateOfBirth);
+            Eyp_chic.SendKeys(ChildData.ChildIdentifierCode);
             
             NextButton.Click();
 
+            StartDate.SendKeys("");
+
+            EndDate.SendKeys("");
+
+            NextButton.Click();
+
+            Claimedhours.SendKeys("4");
+
+            
         }
 
     }

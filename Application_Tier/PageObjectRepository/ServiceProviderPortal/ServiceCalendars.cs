@@ -126,13 +126,14 @@ namespace Automation_Suite.Application_Tier.PageObjectRepository.ServiceProvider
             CreateCalendar.Click();
 
             SelectElement ProgCell = new SelectElement(Eyp_programmecall);
-            var val1 = "ECCE 2019";
-            var val2 = "ECCE 2020";
-            var val3 = "NCS 2019";
-            var val4 = "NCS 2020";
-            var val5 = "NCS 2021";
+            var ECCE2021 = "ECCE 2021";
+            var ECCE2022 = "ECCE 2022";
+           
+            var NCS2020 = "NCS 2020";
+            var NCS2021 = "NCS 2021";
+            var NCS2022 = "NCS 2022";
 
-            ProgCell.SelectByText(val4);
+            ProgCell.SelectByText(NCS2020);
 
             Thread.Sleep(800);
             NextButton.Click();

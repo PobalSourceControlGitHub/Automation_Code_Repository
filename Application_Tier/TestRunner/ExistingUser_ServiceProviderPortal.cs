@@ -26,6 +26,10 @@ namespace Automation_Suite.Application_Tier.TestRunner
             ExistingUser_Navigation.MyAccount_NavigationTest(_driver);
         }
 
+        /// <summary>
+        /// 
+        /// 
+        /// </summary>
         [Category("SPP_SignIn_Coverage")]
         [Test, Order(1)]
         public void SP_Portal_BankAccount_EndToEnd()

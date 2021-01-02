@@ -406,16 +406,20 @@ namespace Automation_Suite.Application_Tier.CRM
 
                 Thread.Sleep(1000);
                 IWebElement chkBox_td = webDriver.FindElement(By.Id("eyp_markasapproved_d"));
+
+               
                 var td = chkBox_td.GetAttribute("class");
 
                 Thread.Sleep(2000);
-                approve_chkBox.Click();              
+                approve_chkBox.Click();
 
-               /*if(value_box.Contains("display: inline-block;"))
-               {
-                    approve_chkbox.Click();
+                /*if(value_box.Contains("display: inline-block;"))
+                {
+                     approve_chkbox.Click();
 
-               } */       
+                } */
+
+                Assert.AreEqual("ms-crm-Field-Data-Print", td);
                 AJAXCall.WaitForAjax();
                 Thread.Sleep(1000);
 

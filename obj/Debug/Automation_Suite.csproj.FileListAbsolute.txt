@@ -176,6 +176,7 @@ C:\Pobal_AutomationProject\Pobal_Test_Project\Automation_Suite\bin\Debug\System.
 C:\Pobal_AutomationProject\Pobal_Test_Project\Automation_Suite\bin\Debug\ThoughtWorks.Selenium.Core.xml
 C:\Pobal_AutomationProject\Pobal_Test_Project\Automation_Suite\bin\Debug\WebDriver.xml
 C:\Pobal_AutomationProject\Pobal_Test_Project\Automation_Suite\bin\Debug\WebDriver.Support.xml
+C:\Pobal_AutomationProject\Pobal_Test_Project\Automation_Suite\obj\Debug\Automation_Suite.csprojAssemblyReference.cache
 C:\Pobal_AutomationProject\Pobal_Test_Project\Automation_Suite\obj\Debug\Automation_Suite.Configuration_Tier.Credentials_Data.resources
 C:\Pobal_AutomationProject\Pobal_Test_Project\Automation_Suite\obj\Debug\Automation_Suite.Configuration_Tier.Dynamic_Data_Write.resources
 C:\Pobal_AutomationProject\Pobal_Test_Project\Automation_Suite\obj\Debug\Automation_Suite.Configuration_Tier.URLConfig.resources
@@ -184,4 +185,3 @@ C:\Pobal_AutomationProject\Pobal_Test_Project\Automation_Suite\obj\Debug\Automat
 C:\Pobal_AutomationProject\Pobal_Test_Project\Automation_Suite\obj\Debug\Automation_Suite.csproj.CopyComplete
 C:\Pobal_AutomationProject\Pobal_Test_Project\Automation_Suite\obj\Debug\Automation_Suite.dll
 C:\Pobal_AutomationProject\Pobal_Test_Project\Automation_Suite\obj\Debug\Automation_Suite.pdb
-C:\Pobal_AutomationProject\Pobal_Test_Project\Automation_Suite\obj\Debug\Automation_Suite.csprojAssemblyReference.cache

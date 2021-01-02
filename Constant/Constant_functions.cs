@@ -18,9 +18,12 @@ namespace Automation_Suite.Constant
 
         public static string bankName;
 
-        public static string UserEmailId = "iom9bow5@hotmail.com";
-
-  
+        public static string key_IrelandCitizen = "EUCitizen";
+        public static string key_EuCitizen = "EUCitizen";
+        public static string Key_Asylum_Seeker_RefugeeCitizen = "Asylum_Seeker_RefugeeCitizen";
+        public static string key_SW_IC_NR_Citizen = "SW_IC_NR_Citizen";
+       
+        public static string key_SelfEmployed = "Self_Employed";
 
 
         public static string SetDateTimeValue()
@@ -36,16 +39,12 @@ namespace Automation_Suite.Constant
             public static void randomNumberGeneration(int range)
             {
                 Random rng = new Random();
-                
+
                 for (int i = 0; i < range; ++i)
                 {
-                    Console.Out.WriteLine(rng.Next());
-                    
+                     Console.Out.WriteLine(rng.Next());
+
                 }
-            /* Typical output:
-                    17
-                    02                  
-            */
             
             }
 
@@ -101,7 +100,7 @@ namespace Automation_Suite.Constant
                 str_build.Append(letter);
             }
 
-            return str_build.ToString();
+            return str_build.ToString().ToLower();
            
         }
     }

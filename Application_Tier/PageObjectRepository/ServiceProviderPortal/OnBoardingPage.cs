@@ -394,12 +394,12 @@ namespace Automation_Suite.Application_Tier.PageObjectRepository
               
                 webDriver.FindElement(By.Id("InsertButton")).Click();
                 Thread.Sleep(1000);
-                AJAXCall.WaitForReady(webDriver);
+                AJAXCall.WaitForAjax();
 
                 
                 webDriver.SwitchTo().DefaultContent();
                 Thread.Sleep(1000);
-                js.ExecuteScript("window.scrollBy(0, 500)", "");
+                //js.ExecuteScript("window.scrollBy(0, 500)", "");
                 Point loc = webDriver.FindElement(By.Id("NextButton")).Location;
 
                 Console.WriteLine(loc);

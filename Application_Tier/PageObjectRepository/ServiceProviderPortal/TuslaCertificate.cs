@@ -226,7 +226,7 @@ namespace Automation_Suite.Application_Tier.PageObjectRepository.ServiceProvider
             password.SendKeys(Credentials_Data.Password);
 
             signIN.Click();
-            AJAXCall.WaitForAjax();
+            AJAXCall.WaitForReady(webDriver);
 
             Thread.Sleep(1000);
 

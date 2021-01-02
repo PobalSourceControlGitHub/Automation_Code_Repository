@@ -1,5 +1,4 @@
-﻿using Automation_Suite._02_Utility_Tier;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Resources;
 
 namespace Automation_Suite.Configuration_Tier

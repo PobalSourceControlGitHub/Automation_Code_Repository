@@ -44,6 +44,7 @@ namespace Automation_Suite.Utility_Tier
 
             string browser = Env.strCurrentBrowser;
 
+            string Root = Directory.GetCurrentDirectory();
             var path = System.Reflection.Assembly.GetCallingAssembly().CodeBase;
             var actualPath = path.Substring(0, path.LastIndexOf("bin"));
             var projectPath = new Uri(actualPath).LocalPath;
@@ -153,7 +154,7 @@ namespace Automation_Suite.Utility_Tier
                         var optionsEdge = new EdgeOptions();
                         optionsEdge.UseChromium = true;
 
-                        _driver = new EdgeDriver(@"C:\Pobal_AutomationProject\Pobal_Test_Project\Automation_Suite\edgedriver_win32_Version85.0\", optionsEdge);
+                        _driver = new EdgeDriver(@"C:\Pobal_AutomationProject\Pobal_Test_Project\Automation_Suite\edgedriver_win64\", optionsEdge);
                         _driver.Manage().Cookies.DeleteAllCookies();
                         _driver.Manage().Window.Maximize();
 

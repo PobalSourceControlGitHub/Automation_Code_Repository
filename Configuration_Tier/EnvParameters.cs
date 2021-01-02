@@ -102,6 +102,10 @@ namespace Automation_Suite._01_Configuration_Tier.EnvironmentFiles
         public static string BIC;
         public static string SortCode;
         public static string BankName;
+        public static string ChildName;
+        public static string ChildSurname;
+        public static string DateOfBirth;
+        public static string ChildIdentifierCode;
         public static string EXCEL_BANK_DATA = @"C:\Pobal_AutomationProject\Pobal_Test_Project\Automation_Suite\Configuration_Tier\Book1.xlsx";
         public static string BANK_NAME = @"C:\Pobal_AutomationProject\Pobal_Test_Project\Automation_Suite\TestData_Repository\BankAccountName.xlsx";
         

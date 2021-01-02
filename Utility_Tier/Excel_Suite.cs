@@ -1,9 +1,8 @@
 ﻿using Automation_Suite._01_Configuration_Tier.EnvironmentFiles;
-using NUnit.Framework;
 using System;
 using System.Collections;
-using System.Collections.Generic;
 using System.Runtime.InteropServices;
+using System.Text.RegularExpressions;
 using xl = Microsoft.Office.Interop.Excel;
 
 namespace Automation_Suite.Utility_Tier
@@ -342,7 +341,8 @@ namespace Automation_Suite.Utility_Tier
             return true;
            }
 
-        public bool setChildDetails(string sheetName, string colName, string value, string value1, string value2)
+
+        public bool setChildDetails(string sheetName, string colName, ChildAward_Data childAwardExcelData)
         {
             OpenExcel();
 
@@ -364,9 +364,9 @@ namespace Automation_Suite.Utility_Tier
                     xl.Range range = worksheet.UsedRange;
                     int rowRange = range.Rows.Count + 1;
 
-                    range.Cells[rowRange, ColumnNumber] = value;
-                    range.Cells[rowRange, ColumnNumber] = value1;
-                    range.Cells[rowRange, ColumnNumber] = value2;
+                    range.Cells[rowRange, ColumnNumber] = childAwardExcelData.ChildName;
+                    range.Cells[rowRange, ++ColumnNumber] = childAwardExcelData.DateOfBirth;
+                    range.Cells[rowRange, ++ColumnNumber] = childAwardExcelData.ChildIdentifierCode;
 
                     workbook.Save();
                     Marshal.FinalReleaseComObject(worksheet);
@@ -386,6 +386,58 @@ namespace Automation_Suite.Utility_Tier
 
             return true;
         }
+
+
+
+        public ChildAward_Data GetChildDetails(string sheetName)
+        {
+            OpenExcel();
+            int sheetValue = 0;
+            int ColumnNumber = 1;
+            ChildAward_Data cd = null;
+            try
+            {
+                if (sheets.ContainsValue("Data"))
+                {
+                    foreach (DictionaryEntry sheet in sheets)
+                    {
+                        if (sheet.Value.Equals("Data"))
+                        {
+                            sheetValue = (int)sheet.Key;
+                        }
+                    }
+
+                    xl.Worksheet worksheet = workbook.Worksheets[sheetValue] as xl.Worksheet;
+                    xl.Range range = worksheet.UsedRange;
+                    int rowRange = range.Rows.Count;
+
+                    var val_childName = range.Cells[rowRange, 1].Value2.ToString();
+                    var val_childDob =  range.Cells[rowRange, 2].Value2.ToString();
+                    var val_childCodeKey = range.Cells[rowRange, 3].Value2.ToString();
+
+                    cd = new ChildAward_Data();
+                    string[] name = Regex.Split(val_childName, @" ");
+
+                    cd.ChildName = val_childName;
+                    cd.ChildFirstName = name[0];
+                    cd.ChildLastName = name[1];
+                    cd.DateOfBirth = range.Cells[rowRange, 2].Value2.ToString();
+                    cd.ChildIdentifierCode = range.Cells[rowRange, 3].Value2.ToString();
+
+                    Console.Write(val_childName + " "  + val_childDob + "  "+ val_childCodeKey +"\t");
+                }
+
+                CloseExcel();
+            }
+
+
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+            return cd;
+        }
+
     }
 }
 
